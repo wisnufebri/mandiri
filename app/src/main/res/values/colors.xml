@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6aab9c</color>
+    <color name="colorSecondary">#e06c78</color>
+    <color name="colorPrimaryTransparent">#1AF8AD3C</color>
+    <color name="colorTransparentLightSilver">#33CCCDCF</color>
+    <color name="colorPrimaryDark">#FBB8AC</color>
+    <color name="colorAccent">#FEDBD0</color>
+    <color name="textColorPrimary">#442C2E</color>
+    <color name="toolbarIconColor">@color/textColorPrimary</color>
+    <color name="loginPageBackgroundColor">#FFFFFF</color>
+    <color name="productGridBackgroundColor">#FFFFFF</color>
+    <color name="textInputOutlineColor">#FBB8AC</color>
+    <color name="colorAccentLight">#1A00A39D</color>
+
+
+
+    <color name="colorTransparent">#5E212121</color>
+    <color name="colorCloudWhite">#F8F8F8</color>
+    <color name="colorDarkWhite">#F0F0F0</color>
+    <color name="colorTransparentWhite">#58FFFFFF</color>
+    <color name="colorSilver">#b2bec3</color>
+    <color name="colorLightSilver">#CCCDCF</color>
+    <color name="colorTransparentBlack">#80000000</color>
+    <color name="colorCloudBlack">#212121</color>
+    <color name="colorTransparentCloudBlack">#EB212121</color>
+    <color name="colorGray">#a4b0be</color>
+    <color name="colorCloudGray">#BEBEBE</color>
+    <color name="colorLightGray">#E2E2E2</color>
+    <color name="colorTransparentLightGray">#11000000</color>
+    <color name="colorDarkGray">#727272</color>
+    <color name="colorOrange">#F18B0A</color>
+    <color name="colorYellow">#ffc90d</color>
+    <color name="colorTransparentYellow">#59FB8C00</color>
+    <color name="colorTransparentOrange">#14E59127</color>
+    <color name="colorGreen">#249C57</color>
+    <color name="colorDarkGreen">#187640</color>
+    <color name="colorRed">#ED4C67</color>
+    <color name="colorDarkRed">#E16161</color>
+    <color name="colorSolidGray">#D6D5D6</color>
+    <color name="colorGold">#DFA913</color>
+    <color name="colorBrown">#8D6E63</color>
+    <color name="colorDarkBrown">#624F48</color>
+    <color name="colorTransparentCream">#f7f1e3</color>
+    <color name="colorBlack">#222222</color>
+    <color name="colorGrey">#838282</color>
+    <color name="colorBlue">#3498db</color>
+    <color name="colorDarkBlue">#1C6BA0</color>
+    <color name="colorBlueSky">#E1ECF4</color>
+    <color name="colorDarkBlueSky">#CCDFED</color>
+    <color name="colorCyan">#00ACC1</color>
+</resources>

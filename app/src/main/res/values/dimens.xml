@@ -1,0 +1,31 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="content_margin">8dp</dimen>
+    <dimen name="progress_bar_size">25dp</dimen>
+    <dimen name="spacing_xxxlarge">55dp</dimen>
+    <dimen name="small">10dp</dimen>
+    <dimen name="xsmall">5dp</dimen>
+    <dimen name="smallx">15dp</dimen>
+
+    <dimen name="promo_img_height">125dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="border_width">6dp</dimen>
+    <dimen name="icon_size">24dp</dimen>
+    <dimen name="height_size_button">50dp</dimen>
+    <dimen name="border_normal">2dp</dimen>
+
+    <!--general size-->
+    <dimen name="font_extra_super_super_small">6sp</dimen>
+    <dimen name="font_extra_super_sup_small">8sp</dimen>
+    <dimen name="font_extra_super_small">10sp</dimen>
+    <dimen name="font_extra_small">12sp</dimen>
+    <dimen name="font_medium_small">14sp</dimen>
+    <dimen name="font_small">16sp</dimen>
+    <dimen name="font_medium">20sp</dimen>
+    <dimen name="font_large">26sp</dimen>
+    <dimen name="spacing_middle">10dp</dimen>
+    <dimen name="spacing_medium">5dp</dimen>
+    <dimen name="spacing_xmedium">7dp</dimen>
+</resources>
