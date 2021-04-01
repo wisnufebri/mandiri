@@ -19,4 +19,6 @@
     <string name="known_for">KNOWN FOR</string>
     <string name="highlighted_movie_image">highlighted movie image</string>
     <string name="text_hint_search_feature">Search</string>
+    <string name="space_iklan">Space Iklan</string>
+    <string name="menu">Menu</string>
 </resources>

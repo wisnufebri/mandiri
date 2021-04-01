@@ -12,16 +12,37 @@
             type="com.test.wisnufebri.ui.show_all.ShowAllViewModel" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etSearchView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/spacing_middle"
+            android:background="@drawable/bg_fill_white_rounded"
+            android:drawableStart="@drawable/ic_search"
+            android:drawablePadding="@dimen/spacing_middle"
+            android:elevation="@dimen/spacing_medium"
+            android:ellipsize="end"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:fontFamily="@font/google_sans_light"
+            android:hint="@string/text_hint_search_feature"
+            android:maxLines="1"
+            android:paddingStart="@dimen/spacing_large"
+            android:paddingTop="@dimen/spacing_middle"
+            android:paddingEnd="@dimen/spacing_large"
+            android:paddingBottom="@dimen/spacing_middle" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/showAllRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_margin="5dp"
             android:orientation="vertical"
-            android:paddingTop="8dp"
             app:bind_load_more="@{viewmodel::loadMoreMovies}"
             app:bind_movie_list="@{viewmodel.movieList}"
             app:bind_view_model="@{viewmodel}"
@@ -48,6 +69,6 @@
             app:layout_constraintTop_toTopOf="@id/showAllRecyclerView"
             tools:visibility="visible" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 
 </layout>

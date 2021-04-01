@@ -18,6 +18,7 @@
         <variable
             name="viewmodel"
             type="com.test.wisnufebri.ui.home.HomeViewModel" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -50,24 +51,135 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <com.google.android.material.card.MaterialCardView
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etSearchView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:cardElevation="2dp"
-                        app:cardPreventCornerOverlap="true"
-                        app:cardCornerRadius="10dp"
-                        android:layout_marginTop="@dimen/small">
+                        android:layout_margin="@dimen/spacing_large"
+                        android:background="@drawable/bg_fill_white_rounded"
+                        android:drawableStart="@drawable/ic_search"
+                        android:drawablePadding="@dimen/spacing_middle"
+                        android:elevation="@dimen/spacing_medium"
+                        android:ellipsize="end"
+                        android:onClick="@{() -> viewmodel.goToShowAllPressed(MovieListType.SEARCH)}"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:fontFamily="@font/google_sans_light"
+                        android:hint="@string/text_hint_search_feature"
+                        android:maxLines="1"
+                        android:paddingStart="@dimen/spacing_large"
+                        android:paddingTop="@dimen/spacing_middle"
+                        android:paddingEnd="@dimen/spacing_large"
+                        android:paddingBottom="@dimen/spacing_middle" />
 
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="match_parent"
-                            android:layout_height="130dp"
-                            android:text="Space Iklan"
-                            style="@style/TextViewRegularDarkGrayExtraSmall"
-                            android:gravity="center_vertical|center"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            />
-                    </com.google.android.material.card.MaterialCardView>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/xsmall"
+                            app:cardCornerRadius="10dp"
+                            app:cardElevation="2dp"
+                            app:cardPreventCornerOverlap="true">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                style="@style/TextViewRegularDarkGrayExtraSmall"
+                                android:layout_width="match_parent"
+                                android:layout_height="130dp"
+                                android:gravity="center_vertical|center"
+                                android:src="@drawable/icon_ticket"
+                                android:scaleType="fitCenter"
+                                android:padding="@dimen/menu_dimens"
+                                android:onClick="@{() -> viewmodel.goToShowAllPressed(MovieListType.IN_THEATERS)}"
+                                android:text="@string/menu"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/xsmall"
+                            app:cardElevation="2dp"
+                            app:cardPreventCornerOverlap="true"
+                            app:cardCornerRadius="10dp"
+                            android:layout_marginTop="@dimen/small"
+                            android:layout_marginBottom="@dimen/small">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="130dp"
+                                android:src="@drawable/icon_video"
+                                android:scaleType="fitCenter"
+                                android:padding="@dimen/menu_dimens"
+                                android:text="@string/menu"
+                                style="@style/TextViewRegularDarkGrayExtraSmall"
+                                android:gravity="center_vertical|center"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                />
+                        </com.google.android.material.card.MaterialCardView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/xsmall"
+                            app:cardCornerRadius="10dp"
+                            app:cardElevation="2dp"
+                            app:cardPreventCornerOverlap="true">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                style="@style/TextViewRegularDarkGrayExtraSmall"
+                                android:layout_width="match_parent"
+                                android:layout_height="130dp"
+                                android:src="@drawable/icon_booking"
+                                android:scaleType="fitCenter"
+                                android:padding="@dimen/menu_dimens"
+                                android:gravity="center_vertical|center"
+                                android:text="@string/menu"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/xsmall"
+                            app:cardElevation="2dp"
+                            app:cardPreventCornerOverlap="true"
+                            app:cardCornerRadius="10dp"
+                            android:layout_marginTop="@dimen/small"
+                            android:layout_marginBottom="@dimen/small">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="130dp"
+                                android:src="@drawable/icon_settings"
+                                android:padding="@dimen/menu_dimens"
+                                android:scaleType="fitCenter"
+                                android:text="@string/menu"
+                                style="@style/TextViewRegularDarkGrayExtraSmall"
+                                android:gravity="center_vertical|center"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                />
+                        </com.google.android.material.card.MaterialCardView>
+
+                    </LinearLayout>
+
+
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/popularLayout"
