@@ -50,6 +50,25 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardElevation="2dp"
+                        app:cardPreventCornerOverlap="true"
+                        app:cardCornerRadius="10dp"
+                        android:layout_marginTop="@dimen/small">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="130dp"
+                            android:text="Space Iklan"
+                            style="@style/TextViewRegularDarkGrayExtraSmall"
+                            android:gravity="center_vertical|center"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            />
+                    </com.google.android.material.card.MaterialCardView>
+
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/popularLayout"
                         android:layout_width="match_parent"
@@ -59,7 +78,7 @@
 
                         <TextView
                             android:id="@+id/popularText"
-                            style="@style/NunitoSemiBoldStyle"
+                            style="@style/TextViewBoldWhiteSmall"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/popular"
@@ -69,7 +88,7 @@
 
                         <TextView
                             android:id="@+id/showAllPopularText"
-                            style="@style/NunitoSemiBoldStyle"
+                            style="@style/TextViewBoldWhiteSmall"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:clickable="true"
@@ -119,7 +138,7 @@
 
                         <TextView
                             android:id="@+id/inTheatersText"
-                            style="@style/NunitoSemiBoldStyle"
+                            style="@style/TextViewBoldWhiteSmall"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/in_theaters"
@@ -129,7 +148,7 @@
 
                         <TextView
                             android:id="@+id/showAllInTheatersText"
-                            style="@style/NunitoSemiBoldStyle"
+                            style="@style/TextViewBoldWhiteSmall"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:clickable="true"
@@ -176,12 +195,13 @@
                         android:id="@+id/upcomingLayout"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="@dimen/small"
+                        android:layout_marginBottom="@dimen/small"
                         android:minHeight="150dp">
 
                         <TextView
                             android:id="@+id/upcomingText"
-                            style="@style/NunitoSemiBoldStyle"
+                            style="@style/TextViewBoldWhiteSmall"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/upcoming"
@@ -191,7 +211,7 @@
 
                         <TextView
                             android:id="@+id/showAllUpcomingText"
-                            style="@style/NunitoSemiBoldStyle"
+                            style="@style/TextViewBoldWhiteSmall"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:clickable="true"

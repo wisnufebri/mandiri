@@ -17,11 +17,27 @@
         android:layout_height="match_parent"
         android:layout_marginBottom="?attr/actionBarSize">
 
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/searchInput"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="@dimen/spacing_middle"
+            android:background="@drawable/bg_fill_white_rounded"
+            android:elevation="2.5dp"
+            android:padding="@dimen/spacing_xmedium"
+            app:defaultQueryHint="@string/text_hint_search_feature"
+            app:iconifiedByDefault="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:queryBackground="@null" />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/moviesRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
+            android:visibility="gone"
             app:bind_load_more="@{viewmodel::loadMoreMovies}"
             app:bind_movie_list="@{viewmodel.movieList}"
             app:bind_view_model="@{viewmodel}"
