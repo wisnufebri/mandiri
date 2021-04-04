@@ -17,58 +17,38 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="@{viewmodel.movie != null ? View.VISIBLE : View.INVISIBLE}"
+        android:layout_marginBottom="?attr/actionBarSize"
         tools:visibility="visible">
 
-        <ImageView
-            android:id="@+id/movieImage"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:contentDescription="@string/movie_image"
-            app:bind_backdrop_path_loading="@{viewmodel.movie.backdropPath}"
-            app:bind_progress="@{movieImageProgressBar}"
-            app:layout_constraintBottom_toTopOf="@id/topGuideline"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:src="@tools:sample/backgrounds/scenic[1]" />
-
-        <ProgressBar
-            android:id="@+id/movieImageProgressBar"
-            style="?android:attr/progressBarStyle"
-            android:layout_width="@dimen/progress_bar_size"
-            android:layout_height="@dimen/progress_bar_size"
-            android:visibility="gone"
-            app:layout_constraintBottom_toBottomOf="@id/movieImage"
-            app:layout_constraintEnd_toEndOf="@id/movieImage"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="@id/movieImage"
-            app:layout_constraintTop_toTopOf="@id/movieImage"
-            tools:visibility="visible" />
-
-        <View
-            android:id="@+id/fadeView"
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/materialCardView2"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:background="@drawable/shape_gradient"
-            app:layout_constraintBottom_toBottomOf="@id/movieImage" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/topGuideline"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent=".35" />
+            android:layout_margin="5dp"
+            app:cardElevation="2dp"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="5dp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/movieImage"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:src="@drawable/wisnu"
+                app:bind_backdrop_path_loading="@{viewmodel.movie.backdropPath}"
+                app:bind_progress="@{movieImageProgressBar}" />
+
+        </com.google.android.material.card.MaterialCardView>
+
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/moviesLayout"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginLeft="@dimen/content_margin"
-            android:layout_marginRight="@dimen/content_margin"
+            android:layout_height="442dp"
+            android:layout_margin="5dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/topGuideline">
+            app:layout_constraintTop_toBottomOf="@id/materialCardView2">
 
             <ScrollView
                 android:layout_width="0dp"
@@ -91,7 +71,7 @@
 
                         <TextView
                             android:id="@+id/titleText"
-                            style="@style/TitleStyle"
+                            style="@style/TextViewBoldWhiteSmall"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:text="@{viewmodel.movie.title}"
@@ -106,6 +86,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:textSize="14sp"
+                            android:layout_margin="5dp"
                             app:bind_genres_text="@{viewmodel.movie.genres}"
                             app:layout_constraintLeft_toLeftOf="@id/titleText"
                             app:layout_constraintRight_toLeftOf="@id/subInfoLayout"
@@ -120,6 +101,7 @@
                             android:layout_marginTop="8dp"
                             android:numStars="5"
                             android:stepSize=".5"
+                            android:layout_margin="5dp"
                             android:theme="@style/RatingBarTheme"
                             app:bind_rating_bar="@{viewmodel.movie}"
                             app:bind_rating_stars="@{5}"
@@ -240,13 +222,14 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
+                        android:layout_margin="5dp"
                         android:alpha=".7"
                         android:text="@{viewmodel.movie.overview}"
                         tools:text="Trapped on the beach with their backs to the sea, British and Allied troops are surrounded by enemy forces." />
 
                     <TextView
                         android:id="@+id/watchTrailerText"
-                        style="@style/NunitoSemiBoldStyle"
+                        style="@style/TextViewBoldWhiteSmall"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
@@ -270,7 +253,7 @@
 
                     <TextView
                         android:id="@+id/castText"
-                        style="@style/NunitoSemiBoldStyle"
+                        style="@style/TextViewBoldWhiteSmall"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
@@ -282,7 +265,6 @@
                         android:id="@+id/castRecyclerView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
                         android:orientation="horizontal"
                         app:bind_cast_list="@{viewmodel.castList}"
                         app:bind_view_model="@{viewmodel}"
@@ -295,6 +277,19 @@
                 </LinearLayout>
             </ScrollView>
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ProgressBar
+            android:id="@+id/movieImageProgressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="@dimen/progress_bar_size"
+            android:layout_height="@dimen/progress_bar_size"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/materialCardView2"
+            app:layout_constraintEnd_toEndOf="@+id/materialCardView2"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/materialCardView2"
+            app:layout_constraintTop_toTopOf="@+id/materialCardView2"
+            tools:visibility="visible" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

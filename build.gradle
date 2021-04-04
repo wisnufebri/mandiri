@@ -4,6 +4,8 @@ buildscript {
     ext.room_version = "2.2.5"
     ext.navigation_version = "2.3.0"
     ext.lifecycle_version = "2.2.0"
+    ext.groupie_version = "2.3.0"
+
 
     repositories {
         google()

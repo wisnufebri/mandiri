@@ -17,31 +17,41 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/etSearchView"
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/searchInput"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_margin="@dimen/spacing_middle"
             android:background="@drawable/bg_fill_white_rounded"
-            android:drawableStart="@drawable/ic_search"
-            android:drawablePadding="@dimen/spacing_middle"
-            android:elevation="@dimen/spacing_medium"
-            android:ellipsize="end"
-            android:focusable="false"
-            android:focusableInTouchMode="false"
-            android:fontFamily="@font/google_sans_light"
-            android:hint="@string/text_hint_search_feature"
-            android:maxLines="1"
-            android:paddingStart="@dimen/spacing_large"
+            android:elevation="2.5dp"
+            android:padding="@dimen/spacing_xmedium"
+            android:visibility="gone"
+            app:defaultQueryHint="@string/text_hint_search_feature"
+            app:iconifiedByDefault="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:queryBackground="@null" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvNoResult"
+            style="@style/TextViewBoldWhiteSmall"
+            android:layout_margin="20dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center_vertical"
             android:paddingTop="@dimen/spacing_middle"
-            android:paddingEnd="@dimen/spacing_large"
-            android:paddingBottom="@dimen/spacing_middle" />
+            android:text="@string/text_feature_not_found"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/searchInput" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/showAllRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="5dp"
+            android:visibility="visible"
             android:orientation="vertical"
             app:bind_load_more="@{viewmodel::loadMoreMovies}"
             app:bind_movie_list="@{viewmodel.movieList}"
@@ -54,19 +64,14 @@
             app:spanCount="@integer/recyclerview_span_count"
             tools:listitem="@layout/list_item_movie_grid" />
 
-
-        <ProgressBar
+        <androidx.core.widget.ContentLoadingProgressBar
             android:id="@+id/moviesProgressBar"
             style="?android:attr/progressBarStyle"
-            android:layout_width="@dimen/progress_bar_size"
-            android:layout_height="@dimen/progress_bar_size"
+            android:layout_width="wrap_content"
+            android:layout_height="73dp"
+            android:layout_gravity="center_vertical|center"
             android:visibility="gone"
             app:bind_visibility_null_list="@{viewmodel.movieList}"
-            app:layout_constraintBottom_toBottomOf="@id/showAllRecyclerView"
-            app:layout_constraintEnd_toEndOf="@id/showAllRecyclerView"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="@id/showAllRecyclerView"
-            app:layout_constraintTop_toTopOf="@id/showAllRecyclerView"
             tools:visibility="visible" />
 
     </LinearLayout>

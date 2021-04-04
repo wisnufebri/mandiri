@@ -1,5 +1,7 @@
 package com.test.wisnufebri.data.config
 
+import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
 
 open class Event<out T>(private val content: T) {
@@ -20,3 +22,8 @@ class EventObserver<T>(private val onEventUnhandledContent: (T) -> Unit) : Obser
         event?.getContentIfNotHandled()?.let { onEventUnhandledContent(it) }
     }
 }
+
+fun <T> LifecycleOwner.observe(liveData: LiveData<T>, action: (t: T) -> Unit) {
+    liveData.observe(this, Observer { it?.let { t -> action(t) } })
+}
+
